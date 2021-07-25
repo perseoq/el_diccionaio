@@ -36,6 +36,8 @@ def diccionario():
     app  = Tk()
     app.title("Diccionario Enciclopédico DIER")
     app.geometry("710x620")
+    book = PhotoImage(file='Book-icon.png')
+    app.iconphoto(True, book)
     #app.geometry("400x80")
     app.resizable(0,0)
     sidef = Frame(app)
