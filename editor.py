@@ -41,7 +41,7 @@ def editor():
 		for row in rows:		
 			lista.insert(0,row[0])
 
-	app = Tk()
+	app = Toplevel()
 	app.title("Editor del Diccionario")
 	#app.geometry("900x600")
 	app.resizable(0,0)
@@ -88,7 +88,7 @@ def editor():
 
 
 
-if __name__=="__main__":
-	editor()
+#if __name__=="__main__":
+#	editor()
 
 

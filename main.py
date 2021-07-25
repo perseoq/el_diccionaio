@@ -31,15 +31,7 @@ def diccionario():
         lista.delete(0,END)
         for row in rows:		
             lista.insert(0,row[0])
-    
-    def srch():
-        termino = se.get()
-        db = conexion()
-        query = f"SELECT rubro FROM terminos WHERE concepto = %'{termino}'%"
-        rows = db.consulta(query)
-        lista.delete(0,END)
-        for row in rows:		
-            lista.insert(0,row[0])    
+      
 
     app  = Tk()
     app.title("Diccionario Enciclopédico DIER")
@@ -65,8 +57,7 @@ def diccionario():
     f.pack(fill=BOTH, expand=True)
     scroll_r = Frame(f)
     scroll_r.pack(side=RIGHT,fill=Y, expand=True)
-    #htmlf = HTMLScrolledText(f, html=select)
-    #htmlf.pack(expand=True, fill=BOTH)
+
     r = Text(f)
     r.tag_configure(tagName="texto", lmargin1=150, rmargin=150)
     r.pack(expand=True, fill=BOTH)
@@ -77,15 +68,15 @@ def diccionario():
 
     b = Frame(app)
     b.pack(fill=X)
-    Button(b, text="Listar", command=show).pack(side=LEFT)
-    Label(b, text="Buscar término").pack(side=LEFT, ipadx=5)
+    #Button(b, text="Listar", command=show).pack(side=LEFT)
+    Label(b, text=" ").pack(side=LEFT, fill=X, expand=True)
     
-    se = StringVar()
-    search  =  Entry(b, textvariable=se)
-    search.pack(side=LEFT, expand=True, fill=X)
+    #se = StringVar()
+    #search  =  Entry(b, textvariable=se)
+    #search.pack(side=LEFT, expand=True, fill=X)
     
-    Button(b, text="Buscar", command=srch).pack(side=LEFT)
-    Button(b, text="Editar", command=editor).pack(side=LEFT)
+    #Button(b, text="Buscar", command=srch).pack(side=LEFT)
+    Button(b, text="Editar", command=editor, background='yellow', foreground="green").pack(side=LEFT)
     mainloop()
 
 if __name__=="__main__":
